@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import * as usuarioService from '../services/usuario.service';
-import { UsuarioType, UsuarioInterface } from 'src/models/usuario.types';
+import {  UsuarioInterface } from 'src/models/usuario.types';
 
 export const getUsuariosController = async (
 	_req: Request,
@@ -46,9 +46,9 @@ export const createUsuarioController = async (
 	next: NextFunction,
 ) => {
 	try {
-		const { nombre, email, password } = _req.body as UsuarioType;
+		const { id, nombre, email, password } = _req.body as UsuarioInterface;
 
-		const data: UsuarioType = { nombre, email, password };
+		const data: UsuarioInterface = { id, nombre, email, password };
 
 		const newUsuario = await usuarioService.createUsuario(data);
 

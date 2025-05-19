@@ -1,6 +1,6 @@
 import prisma from "../../prisma/client"
 
-import { UsuarioInterface, UsuarioType } from "src/models/usuario.types";
+import { UsuarioInterface } from "src/models/usuario.types";
 
 export const getUsuarios = () => {
 	return prisma.usuario.findMany();
@@ -14,7 +14,7 @@ export const getUsuarioById = (usuarioId: string) => {
 	})
 }
 
-export const createUsuario = (data: UsuarioType) => {
+export const createUsuario = (data: UsuarioInterface) => {
 	return prisma.usuario.create({ data })
 }
 

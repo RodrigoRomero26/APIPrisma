@@ -5,4 +5,4 @@ export interface UsuarioInterface {
 	password: string;
 }
 
-export type UsuarioType = Omit<UsuarioInterface, 'id'>;
+
